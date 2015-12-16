@@ -34,7 +34,7 @@ This project aims to solve the need for service discovery on AWS ECS is then **s
 
 ### What you do
 
-#### Usage 
+#### Usage
 
 As I said, there are a lot of options for how to use it.
 
@@ -77,6 +77,12 @@ Task Definition with service discovery:
                 "cpu": 2,
                 "memory": 45,
                 "entryPoint": ["awsesd"],
+                "environment": [
+                  {
+                    "name": "AWS_DEFAULT_REGION",
+                    "value": "eu-west-1"
+                  }
+                ],
                 "mountPoints": [
                     {
                         "sourceVolume": "ecs",
@@ -102,6 +108,7 @@ Task Definition with service discovery:
 2. Existing `containerDefinitions` entry got `portMappings` added to it.
 3. `containerDefinitions` got a new entry for `service-discovery`
 4. Task Definition got `volumes` added to it. This is only needed to read one line from one file, but it's an important one. The `ECS_CLUSTER` definition from `/etc/ecs/ecs.config`
+5. Define environment variable `AWS_DEFAULT_REGION` according to the region you are using
  * That's the only way I could find to make this "NO CONFIGURATION NEEDED".
 
 ### What it's like
