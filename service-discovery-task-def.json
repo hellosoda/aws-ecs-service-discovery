@@ -14,6 +14,12 @@
             "cpu": 2,
             "memory": 45,
             "entryPoint": ["awsesd"],
+            "environment": [
+              {
+                "name": "AWS_DEFAULT_REGION",
+                "value": "eu-west-1"
+              }
+            ],
             "mountPoints": [
                 {
                     "sourceVolume": "ecs",

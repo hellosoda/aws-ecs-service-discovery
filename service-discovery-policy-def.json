@@ -1,0 +1,45 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Stmt1450196724000",
+            "Effect": "Allow",
+            "Action": [
+                "ecs:DescribeContainerInstances",
+                "ecs:DescribeServices",
+                "ecs:DescribeTaskDefinition",
+                "ecs:DescribeTasks",
+                "ecs:ListContainerInstances",
+                "ecs:ListServices",
+                "ecs:ListTaskDefinitions",
+                "ecs:ListTaskDefinitionFamilies",
+                "ecs:ListTasks"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "Stmt1450196804000",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "Stmt1450196900000",
+            "Effect": "Allow",
+            "Action": [
+                "route53:ChangeResourceRecordSets",
+                "route53:GetHostedZone",
+                "route53:ListHostedZones"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
